@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: mcqGenerator
+Version: 0.0.1
+Author: Deep Patel
+Author-email: deep.dp2782002@gmail.com
+Requires-Dist: groq
+Requires-Dist: langchain
+Requires-Dist: streamlit
+Requires-Dist: python-dotenv
+Requires-Dist: PyPDF2
