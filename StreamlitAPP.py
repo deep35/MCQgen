@@ -64,10 +64,10 @@ with st.form("user_inputes"):
                 if isinstance(respone, dict):
                     # extract the quiz data from response
                     quiz = respone.get("quiz", None)
-                    # try:
-                    #     quiz = re.findall("({.*})", quiz)
-                    # except Exception as e:
-                    #     raise Exception("Error parsing quiz data")
+                    try:
+                        quiz = re.findall("({.*})", quiz)[0]
+                    except Exception as e:
+                        raise Exception("Error parsing quiz data")
                     if quiz is not None:
                         table_data = get_table_data(quiz)
                         if table_data is not None:
