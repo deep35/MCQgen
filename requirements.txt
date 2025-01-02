@@ -3,5 +3,6 @@ langchain
 streamlit
 python-dotenv
 PyPDF2
-langchain_groq
+langchain-groq
+regex
 -e .
