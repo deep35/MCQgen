@@ -54,7 +54,7 @@ with st.form("user_inputes"):
                     )
             except Exception as e:
                 traceback.print_exception(type(e), e, e.__traceback__)
-                st.error("Re-Click to generate quiz")
+                st.error(f"Error : {e}")
 
             else:
                 print(f"Total Tokens:{cb.total_tokens}")
@@ -70,7 +70,7 @@ with st.form("user_inputes"):
                         print(quiz)  # Debug print to confirm the extracted quiz
                     except Exception as e:
                         print(f"Could't generate quiz: {e}")
-                        st.error("Re-Click to generate quiz")
+                        st.error(f"Could't generate quiz: {e}")
                         quiz = None  # Set quiz to None to avoid further processing
                     if quiz is not None:
                         table_data = get_table_data(quiz)
@@ -82,7 +82,7 @@ with st.form("user_inputes"):
                             # Display the review in a text box as  well
                             st.text_area(label="Review", value=respone["review"])
                         else:
-                            st.error("Re-Click to generate quiz")
+                            st.error("error")
 
                 else:
                     st.write(respone)
