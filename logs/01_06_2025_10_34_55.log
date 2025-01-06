@@ -1,0 +1,20 @@
+[2025-01-06 10:35:03,590] 293 langchain_core.callbacks.manager - WARNING - Error in StdOutCallbackHandler.on_chain_start callback: AttributeError("'NoneType' object has no attribute 'get'")
+[2025-01-06 10:35:03,591] 293 langchain_core.callbacks.manager - WARNING - Error in StdOutCallbackHandler.on_chain_start callback: AttributeError("'NoneType' object has no attribute 'get'")
+[2025-01-06 10:35:15,708] 1086 groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 0.393980 seconds
+[2025-01-06 10:35:28,159] 1086 groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 0.922341 seconds
+[2025-01-06 10:36:46,244] 293 langchain_core.callbacks.manager - WARNING - Error in StdOutCallbackHandler.on_chain_start callback: AttributeError("'NoneType' object has no attribute 'get'")
+[2025-01-06 10:36:46,246] 293 langchain_core.callbacks.manager - WARNING - Error in StdOutCallbackHandler.on_chain_start callback: AttributeError("'NoneType' object has no attribute 'get'")
+[2025-01-06 10:36:47,460] 1025 httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-06 10:36:47,472] 293 langchain_core.callbacks.manager - WARNING - Error in StdOutCallbackHandler.on_chain_start callback: AttributeError("'NoneType' object has no attribute 'get'")
+[2025-01-06 10:36:47,857] 1025 httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2025-01-06 10:36:47,857] 1086 groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+[2025-01-06 10:36:54,554] 1025 httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-06 10:37:35,085] 293 langchain_core.callbacks.manager - WARNING - Error in StdOutCallbackHandler.on_chain_start callback: AttributeError("'NoneType' object has no attribute 'get'")
+[2025-01-06 10:37:35,086] 293 langchain_core.callbacks.manager - WARNING - Error in StdOutCallbackHandler.on_chain_start callback: AttributeError("'NoneType' object has no attribute 'get'")
+[2025-01-06 10:37:35,862] 1025 httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2025-01-06 10:37:35,862] 1086 groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 18.000000 seconds
+[2025-01-06 10:37:54,974] 1025 httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+[2025-01-06 10:37:54,974] 293 langchain_core.callbacks.manager - WARNING - Error in StdOutCallbackHandler.on_chain_start callback: AttributeError("'NoneType' object has no attribute 'get'")
+[2025-01-06 10:37:55,273] 1025 httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+[2025-01-06 10:37:55,273] 1086 groq._base_client - INFO - Retrying request to /openai/v1/chat/completions in 6.000000 seconds
+[2025-01-06 10:38:01,905] 1025 httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"

@@ -42,7 +42,7 @@ quiz_generation_prompt = PromptTemplate(
 
 # chaining both prompt and llm to generate quiz questions
 quiz_chain = LLMChain(
-    llm=llm, prompt=quiz_generation_prompt, output_key="quiz", verbose=True
+    llm=llm, prompt=quiz_generation_prompt, output_key="quiz", verbose=False
 )
 
 
@@ -64,7 +64,7 @@ quiz_evaluation_prompt = PromptTemplate(
 
 # chaining both prompt and llm to evaluate generated quiz questions
 review_chain = LLMChain(
-    llm=llm, prompt=quiz_evaluation_prompt, output_key="review", verbose=True
+    llm=llm, prompt=quiz_evaluation_prompt, output_key="review", verbose=False
 )
 
 # Sequencing both chains to generate and evaluate quiz questions

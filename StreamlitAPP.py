@@ -23,14 +23,14 @@ with st.form("user_inputes"):
     uploaded_file = st.file_uploader("Upload a PDF or txt file")
 
     # input fields
-    mcq_count = st.number_input("No. Of MCQs", min_value=3, max_value=50)
+    mcq_count = st.number_input("Numbers Of MCQs", min_value=3, max_value=15)
 
     # subject
-    subject = st.text_input("Insert Subject", max_chars=20)
+    subject = st.text_input("Insert Subject Name", max_chars=20)
 
     # Quiz tone
     tone = st.text_input(
-        "Complexity Level of Questions", max_chars=20, placeholder="Simple"
+        "Complexity Level of Questions(Simple, Intermediate, Hard)", max_chars=20, placeholder="Simple"
     )
 
     # Add button
@@ -38,7 +38,7 @@ with st.form("user_inputes"):
 
     # check if the button is clicked and all fields have input
     if button and uploaded_file is not None and mcq_count and subject and tone:
-        with st.spinner("Loading..."):
+        with st.spinner("Wait While We Create MCQs..."):
             try:
                 text = read_file(uploaded_file)
                 # count tokens and the cost of API call
@@ -54,7 +54,7 @@ with st.form("user_inputes"):
                     )
             except Exception as e:
                 traceback.print_exception(type(e), e, e.__traceback__)
-                st.error("Error")
+                st.error("Re-Click to generate quiz")
 
             else:
                 print(f"Total Tokens:{cb.total_tokens}")
@@ -62,12 +62,16 @@ with st.form("user_inputes"):
                 print(f"Completion Tokens:{cb.completion_tokens}")
                 print(f"Total Cost:{cb.total_cost}")
                 if isinstance(respone, dict):
-                    # extract the quiz data from response
-                    quiz = respone.get("quiz", None)
-                    # try:
-                    #     quiz = re.findall("({.*})", quiz)
-                    # except Exception as e:
-                    #     raise Exception("Error parsing quiz data")
+                    print(respone.get('quiz'))
+                    try:
+                        quiz = str(respone.get('quiz',None))                         
+                        matches = re.findall(r"({.*})", quiz)
+                        quiz = matches[0]  # Extract the first match (assuming one valid match)
+                        print(quiz)  # Debug print to confirm the extracted quiz
+                    except Exception as e:
+                        print(f"Could't generate quiz: {e}")
+                        st.error("Re-Click to generate quiz")
+                        quiz = None  # Set quiz to None to avoid further processing
                     if quiz is not None:
                         table_data = get_table_data(quiz)
                         if table_data is not None:
@@ -78,7 +82,7 @@ with st.form("user_inputes"):
                             # Display the review in a text box as  well
                             st.text_area(label="Review", value=respone["review"])
                         else:
-                            st.error("Error in the table data")
+                            st.error("Re-Click to generate quiz")
 
                 else:
                     st.write(respone)

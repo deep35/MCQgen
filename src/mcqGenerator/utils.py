@@ -24,7 +24,11 @@ def read_file(file):
 def get_table_data(quiz_str):
     try:
         # convert the quiz from a string to dictionary
-        quiz_dict=json.loads(quiz_str)
+        try:
+            quiz_dict = json.loads(quiz_str)
+        except json.JSONDecodeError as e:
+            print(f"JSON decoding failed: {e}")
+            return False
         quiz_table_data=[]
 
         # iterate over the quiz dictionary and extract the required information
