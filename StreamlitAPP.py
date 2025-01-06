@@ -67,7 +67,6 @@ with st.form("user_inputes"):
                         quiz = str(respone.get('quiz',None))                         
                         matches = re.findall(r"({.*})", quiz)
                         quiz = matches[0]  # Extract the first match (assuming one valid match)
-                        print(quiz)  # Debug print to confirm the extracted quiz
                     except Exception as e:
                         print(f"Could't generate quiz: {e}")
                         st.error(f"Could't generate quiz: {e}")
