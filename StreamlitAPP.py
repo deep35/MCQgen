@@ -62,7 +62,7 @@ with st.form("user_inputes"):
                 print(f"Completion Tokens:{cb.completion_tokens}")
                 print(f"Total Cost:{cb.total_cost}")
                 if isinstance(respone, dict):
-                    print(respone.get('quiz'))
+                    print(respone.get('quiz',None))
                     try:
                         quiz = str(respone.get('quiz',None))                         
                         matches = re.findall(r"({.*})", quiz)
