@@ -30,7 +30,7 @@ with st.form("user_inputes"):
 
     # Quiz tone
     tone = st.text_input(
-        "Complexity Level of Questions(Simple, Intermediate, Hard)", max_chars=20, placeholder="Simple"
+        "Complexity Level of Questions(For now use Simple only)", max_chars=20, placeholder="Simple"
     )
 
     # Add button
